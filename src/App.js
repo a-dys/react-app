@@ -15,14 +15,16 @@ class App extends React.Component {
         return (
             <div>
                 <h1>Hello World</h1>
-                <input type="text"
-                       onChange={this.update.bind(this)}
-                />
+                <Widget update={this.update.bind(this)}/>
+                <Widget update={this.update.bind(this)}/>
                 <p>{this.state.txt} - {this.state.cat}</p>
             </div>
         )
     }
 }
+
+const Widget = (props) =>
+    <input type="text" onChange={props.update} />
 
 //const App = () => <h1>Hello stateless</h1>
 
